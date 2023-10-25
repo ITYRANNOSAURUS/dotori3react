@@ -74,3 +74,9 @@ strong {
     font-weight: 700;
     font-style: normal;
 }
+
+.right-top-text {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+}

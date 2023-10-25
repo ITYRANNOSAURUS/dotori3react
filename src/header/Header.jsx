@@ -8,12 +8,12 @@ const Header = () => {
     const [dropdownOpen4, setDropdownOpen4] = useState(false);
 
     return (
-        <div className="p-5 my-bg-color text-white d-flex justify-content-between">
+        <div className={styles.container}>
             <h1 className="my-text-size">
                 <a href="http://localhost/home"><img className={styles.title} src="/logo.png" alt="" /></a>
             </h1>
-            <ul className="navbar-nav mx-auto">
-                <li className="nav-item dropdown mr-3">
+            <ul className={`navbar-nav ${styles.navbarNav}`}>
+                <li className={`nav-item dropdown mr-3 ${styles.navItem}`}>
                     <a className="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button"
                         style={{ color: 'rgb(255, 179, 0)' }} onClick={() => setDropdownOpen1(!dropdownOpen1)}>충전소 찾기</a>
                     {dropdownOpen1 && (

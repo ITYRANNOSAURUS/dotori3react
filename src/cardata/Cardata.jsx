@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import style from './Cardata.module.css'
 
+
 const Cardata = () => {
     const [carDatas, setCarDatas] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -13,6 +14,7 @@ const Cardata = () => {
 
     return (
         <div className={style['car-data-container']}>
+            <p className={style['right-top-text']}>react + springboot 활용한 페이지입니다.</p>
             <h1>전기차 주행거리</h1>
             <p className={style['car-data-distance']}>전기차 주행거리 : 한 번 충전으로 주행할 수 있는 거리</p>
             <p className={style['car-data-intro']}>주행거리 상위 250개 전기자동차 목록입니다.<br></br>
@@ -38,8 +40,8 @@ const Cardata = () => {
                 }
             }).map((car) => (
                 <div key={car.id} className={style['car-item']}>
-                    <p className={style.Model}>Model: {car.model}</p>
-                    <p>Kilometers: {car.km}</p>
+                    <p className={style.Model}>{car.model}</p>
+                    <p>{car.km} km</p>
                 </div>
             ))}
         </div>
