@@ -43,6 +43,7 @@ const Cardata = () => {
                     <p className={style.Model}>{car.model}</p>
                     <p>{car.km} km</p>
                 </div>
+
             ))}
         </div>
     );

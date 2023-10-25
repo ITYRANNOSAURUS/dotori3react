@@ -1,0 +1,5 @@
+.App {
+    background-color: #000000;  /* 검정색 */
+    min-height: 100vh;
+    color: white; /* 글자색을 흰색으로 변경 */
+  }
