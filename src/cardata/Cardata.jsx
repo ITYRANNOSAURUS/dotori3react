@@ -1,0 +1,49 @@
+import { useState, useEffect } from 'react';
+import style from './Cardata.module.css'
+
+const Cardata = () => {
+    const [carDatas, setCarDatas] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    useEffect(() => {
+        fetch("/media/cardata")
+            .then((res) => res.json())
+            .then((data) => setCarDatas(data));
+    }, []);
+
+    return (
+        <div className={style['car-data-container']}>
+            <h1>전기차 주행거리</h1>
+            <p className={style['car-data-distance']}>전기차 주행거리 : 한 번 충전으로 주행할 수 있는 거리</p>
+            <p className={style['car-data-intro']}>주행거리 상위 250개 전기자동차 목록입니다.<br></br>
+                알고 싶은 차종을 검색해 보세요!</p>
+            <div className={style['search-bar']}>
+                <input
+                    type="text"
+                    placeholder="차 종류 입력"
+                    onChange={(event) => {
+                        setSearchTerm(event.target.value);
+                    }}
+                />
+                <button className={style['search-button']}>검색</button>
+            </div>
+
+
+
+            {carDatas.filter((val) => {
+                if (searchTerm === "") {
+                    return val;
+                } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return val;
+                }
+            }).map((car) => (
+                <div key={car.id} className={style['car-item']}>
+                    <p className={style.Model}>Model: {car.model}</p>
+                    <p>Kilometers: {car.km}</p>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export default Cardata;
