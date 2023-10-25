@@ -10,6 +10,8 @@
 
 .title {
     width: 20rem;
+    margin-left: 4.5rem;
+    margin-top: 2rem;
 }
 
 .title:hover {
@@ -32,7 +34,8 @@
 }
 
 .nav-link:hover {
-    color: rgb(255, 179, 0) !important;
+    color: 255, 179, 0 !important;
+
 }
 
 .link-dark {
@@ -40,6 +43,7 @@
 }
 
 .dropdown-submenu {
+
     position: relative;
 }
 
@@ -50,8 +54,9 @@
     width: 13rem;
     margin: 1rem;
     margin-top: -1rem;
-    background-color: rgba(255, 179, 0, 0.2);
+    background-color: rgb(255, 179, 0, 0.2);
 }
+
 
 .navbar-nav .dropdown-menu {
     border-top: 3px solid rgb(255, 179, 0) !important;
