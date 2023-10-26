@@ -17,21 +17,10 @@ body {
     color: white;
 }
 
-ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-    justify-content: space-around;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: none;
-    color: white;
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .my-bg-color {
@@ -46,8 +35,6 @@ ul {
 
 .title {
     width: 20rem;
-    margin: 1rem 4rem 0 2.9rem;
-    position: relative;
 }
 
 .title:hover {
@@ -59,15 +46,7 @@ ul {
     background-color: none;
 }
 
-.nav-item {
-    margin-right: 2rem;
-}
-
-.nav-item.dropdown {
-    list-style: none;
-}
-
-#postsDropdown {
+.nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +54,6 @@ ul {
     color: rgb(255, 179, 0);
     font-size: 20px;
     transition-duration: .3s;
-    position: relative;
 }
 
 .nav-link:hover {
@@ -97,74 +75,53 @@ ul {
     width: 13rem;
     margin: 1rem;
     margin-top: -1rem;
-    background-color: rgb(255, 179, 0, 0.2);
+    background-color: rgb(255, 179, 0, 0.45);
 }
 
 
 .navbar-nav .dropdown-menu {
     border-top: 3px solid rgb(255, 179, 0) !important;
+    position: fixed;
 }
-
 
 .dropdown-toggle::after {
     display: none;
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
 }
 
 .navbar-nav.ml-auto li a {
     font-size: 15px;
 }
 
-.navbar-nav .nav-item {
-    margin-right: 10rem;
-}
-
 .navbar-nav .nav-link {
-    display: flex;
-    align-items: center;
-    color: rgb(255, 179, 0);
-    font-size: 20px;
-    transition-duration: .3s;
+    margin: 0rem 1rem -3rem 1rem;
+    width: 13rem;
+    height: 10rem;
 }
 
-.navbar-nav .nav-link:hover {
-    color: rgb(255, 179, 0) !important;
-}
-
-.dropdown-item {
+a.dropdown-item {
+    padding: 1rem;
     width: 13rem;
     color: white;
+
 }
 
-.navbarNav {
+.h {
     display: flex;
-    width: 100%;
-    margin-right: 10rem;
-
+    padding: 48px;
+    width: 1200px;
 }
 
-.dropdown_category {
-    font-size: 1.3rem;
+h2 {
+    margin: 0;
+    width: 320px;
+    height: 114.54px;
 }
 
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-/* 드롭다운 항목을 초기에 숨김 */
-.dropdown .dropdown-menu {
-    display: none;
-}
-
-/* 호버 시 드롭다운 표시 */
-.dropdown:hover .dropdown-menu {
-    display: block;
+ul {
+    display: flex;
+    list-style: none;
+    width: 600px;
+    height: 122.54px;
+    padding: 0;
+    margin: 0 71.6px;
 }

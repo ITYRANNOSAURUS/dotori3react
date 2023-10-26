@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import Cardata from './cardata/Cardata';
 import Header from './header/Header';
 import Loading from './loading/Loading';
