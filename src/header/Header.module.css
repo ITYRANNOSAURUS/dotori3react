@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'TheJamsil5Bold';
+    height: 100vh;
+    /* 화면 높이의 100%로 설정 */
+    background-color: #000;
+    background-size: cover;
+    /* 이미지를 화면에 맞게 조절 */
+    background-repeat: no-repeat;
+    /* 이미지 반복을 중지 */
+    color: white;
+  }
+
 ul {
     list-style: none;
     display: flex;
@@ -7,15 +26,13 @@ ul {
     justify-content: space-around;
 }
 
-
 .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
     background-color: none;
     color: white;
-    width: 60rem;
+    
 }
 
 .my-bg-color {
@@ -30,8 +47,7 @@ ul {
 
 .title {
     width: 20rem;
-    margin-left: 4.5rem;
-    margin-top: 2rem;
+    margin: 1rem 4rem 0 2.9rem;
     position: relative;
 }
 
@@ -60,12 +76,11 @@ ul {
     color: rgb(255, 179, 0);
     font-size: 20px;
     transition-duration: .3s;
-    text-decoration: none !important;
+    position: relative;
 }
 
 .nav-link:hover {
     color: 255, 179, 0 !important;
-    text-decoration: none !important;
 }
 
 .link-dark {
@@ -73,7 +88,6 @@ ul {
 }
 
 .dropdown-submenu {
-
     position: relative;
 }
 
@@ -90,7 +104,6 @@ ul {
 
 .navbar-nav .dropdown-menu {
     border-top: 3px solid rgb(255, 179, 0) !important;
-    position: fixed;
 }
 
 
@@ -119,14 +132,11 @@ ul {
     color: rgb(255, 179, 0);
     font-size: 20px;
     transition-duration: .3s;
-    text-decoration: none;
-    /* 링크의 기본 텍스트 밑줄 제거 */
 }
 
 .navbar-nav .nav-link:hover {
     color: rgb(255, 179, 0) !important;
 }
-
 
 .dropdown-item {
     width: 13rem;
@@ -136,8 +146,27 @@ ul {
 .navbarNav {
     display: flex;
     width: 100%;
+    margin-right: 10rem;
+    
 }
 
 .dropdown_category {
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* 드롭다운 항목을 초기에 숨김 */
+.dropdown .dropdown-menu {
+    display: none;
+}
+
+/* 호버 시 드롭다운 표시 */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
