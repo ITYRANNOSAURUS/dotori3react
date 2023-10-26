@@ -42,8 +42,8 @@ const Cardata = () => {
                 }
             }).map((car) => (
                 <div key={car.id} className={style['car-item']}>
-                    <p className={style.Model}>{car.model}</p>
-                    <p>{car.km} km</p>
+                    <p>{car.model}</p>
+                    <p className={style.Km}>{car.km} km</p>
                 </div>
 
             ))}

@@ -105,9 +105,18 @@ strong {
     font-weight: bold;
 }
 
-.Model {
+.car-item {
     color: rgb(170, 31, 6);
+    font-family: 'TheJamsil5Bold';
+    text-align: center;
 }
+
+
+.Km {
+    color: black;
+}
+
+
 
 @font-face {
     font-family: 'TheJamsil5Bold';
