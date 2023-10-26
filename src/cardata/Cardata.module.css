@@ -138,7 +138,7 @@ strong {
 }
 
 .results-container {
-    height: 500px;
+    height: 30rem;
     /* 원하는 높이로 설정하세요. */
     overflow-y: auto;
     /* 수직 스크롤을 허용합니다. */
