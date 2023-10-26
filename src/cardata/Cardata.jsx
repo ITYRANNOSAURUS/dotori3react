@@ -48,20 +48,22 @@ const Cardata = () => {
                 </div>
             </div>
 
-            {
-                carDatas.filter((val) => {
-                    if (searchTerm === "") {
-                        return val;
-                    } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
-                        return val;
-                    }
-                }).map((car) => (
-                    <div key={car.id} className={style['car-item']}>
-                        <p>{car.model}</p>
-                        <p className={style.Km}>{car.km} km</p>
-                    </div>
-                ))
-            }
+            <div className={style['results-container']}>
+                {
+                    carDatas.filter((val) => {
+                        if (searchTerm === "") {
+                            return val;
+                        } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return val;
+                        }
+                    }).map((car) => (
+                        <div key={car.id} className={style['car-item']}>
+                            <p>{car.model}</p>
+                            <p className={style.Km}>{car.km} km</p>
+                        </div>
+                    ))
+                }
+            </div>
         </div >
     );
 }

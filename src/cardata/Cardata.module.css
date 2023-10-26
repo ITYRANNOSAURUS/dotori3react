@@ -100,7 +100,6 @@ input[type='text'] {
 
 .car-item {
     width: 300px;
-    height: 100%;
     background-color: #f9f9f9;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -136,4 +135,11 @@ strong {
     position: absolute;
     top: 2rem;
     right: 1rem;
+}
+
+.results-container {
+    height: 500px;
+    /* 원하는 높이로 설정하세요. */
+    overflow-y: auto;
+    /* 수직 스크롤을 허용합니다. */
 }
