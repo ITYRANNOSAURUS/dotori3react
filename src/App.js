@@ -17,7 +17,7 @@ function App() {
           setMessage(message);
           setIsLoading(false); // 2초 후에 로딩 완료로 설정
         });
-    }, 2500); // 2초 지연
+    }, 2000); // 2초 지연
   }, []);
 
   return (

@@ -1,24 +1,65 @@
 .car-data-container {
     text-align: center;
-    margin: 5rem auto;
+    margin: 1rem auto;
     /* 수직 마진은 20px, 수평 마진은 자동으로 설정하여 가운데 정렬 */
-    padding: 20px;
+    padding: 1rem;
     border-radius: 5px;
     font-family: 'TheJamsil5Bold';
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .car-data-distance {
     font-size: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.car-data-heading {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    animation: slideFromLeft 1s ease-in-out;
+    /* 왼쪽에서 오른쪽으로 나타나는 애니메이션 */
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden .car-item {
+    opacity: 0;
+    transform: scale(0);
 }
 
 .car-data-intro {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 h1 {
     font-size: 3rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 5rem;
 }
 
 .search-bar {

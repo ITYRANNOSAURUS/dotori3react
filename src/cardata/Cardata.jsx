@@ -13,21 +13,23 @@ const Cardata = () => {
     }, []);
 
     return (
-        <div className={style['car-data-container']}>
+        <div className={style['react']}>
             <p className={style['right-top-text']}>react + springboot 활용한 페이지입니다.</p>
-            <h1>전기차 주행거리</h1>
-            <p className={style['car-data-distance']}>전기차 주행거리 : 한 번 충전으로 주행할 수 있는 거리</p>
-            <p className={style['car-data-intro']}>주행거리 상위 250개 전기자동차 목록입니다.<br></br>
-                알고 싶은 차종을 검색해 보세요!</p>
-            <div className={style['search-bar']}>
-                <input
-                    type="text"
-                    placeholder="차 종류 입력"
-                    onChange={(event) => {
-                        setSearchTerm(event.target.value);
-                    }}
-                />
-                <button className={style['search-button']}>검색</button>
+            <div className={style['car-data-container']}>
+                <h1 className="car-data-heading">전기차 주행거리</h1>
+                <p className={style['car-data-distance']}>전기차 주행거리 : 한 번 충전으로 주행할 수 있는 거리</p>
+                <p className={style['car-data-intro']}>주행거리 상위 250개 전기자동차 목록입니다.<br></br><br></br>
+                    알고 싶은 차종을 검색해 보세요!</p>
+                <div className={style['search-bar']}>
+                    <input
+                        type="text"
+                        placeholder="차 종류 입력"
+                        onChange={(event) => {
+                            setSearchTerm(event.target.value);
+                        }}
+                    />
+                    <button className={style['search-button']}>검색</button>
+                </div>
             </div>
 
 

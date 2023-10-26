@@ -13,7 +13,7 @@ const Header = () => {
                 <a href="http://localhost/home"><img className={styles.title} src="/logo.png" alt="" /></a>
             </h1>
             <ul className={`navbar-nav ${styles.navbarNav}`}>
-                <li className={`nav-item dropdown mr-3 ${styles.navItem}`}>
+                <li className={styles.dropdown_category}>
                     <a className="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button"
                         style={{ color: 'rgb(255, 179, 0)' }} onClick={() => setDropdownOpen1(!dropdownOpen1)}>충전소 찾기</a>
                     {dropdownOpen1 && (
@@ -26,7 +26,7 @@ const Header = () => {
                     )}
                 </li>
 
-                <li className="nav-item dropdown mr-3">
+                <li className={styles.dropdown_category}>
                     <a className="nav-link dropdown-toggle active" href="#" id="postsDropdown" role="button"
                         style={{ color: 'rgb(255, 179, 0)' }} onClick={() => setDropdownOpen2(!dropdownOpen2)}>게시판</a>
                     {dropdownOpen2 && (
@@ -42,7 +42,7 @@ const Header = () => {
                     )}
                 </li>
 
-                <li className="nav-item dropdown mr-3">
+                <li className={styles.dropdown_category}>
                     <a className="nav-link dropdown-toggle active" href="#" id="postsDropdown" role="button"
                         style={{ color: 'rgb(255, 179, 0)' }} onClick={() => setDropdownOpen3(!dropdownOpen3)}>미디어</a>
                     {dropdownOpen3 && (
@@ -62,7 +62,7 @@ const Header = () => {
                 </li>
 
 
-                <li className="nav-item dropdown mr-3">
+                <li className={styles.dropdown_category}>
                     <a className="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button"
                         style={{ color: 'rgb(255, 179, 0)' }} onClick={() => setDropdownOpen4(!dropdownOpen4)}>멤버십</a>
                     {dropdownOpen4 && (
