@@ -1,30 +1,39 @@
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 6rem;
+    color: #f2c12e;
+}
+
+
 .car-data-container {
-    position: relative;
     text-align: center;
-    margin: 1rem auto;
+    margin-bottom: 3rem;
     padding: 1rem;
     border-radius: 5px;
     font-family: 'TheJamsil5Bold';
     animation: fadeIn 1.5s ease-in-out;
+    font-size: 2rem;
 
 }
 
-
-.car-data-distance {
-    font-size: 1.5rem;
-    margin-bottom: 4rem;
+.car-data-title {
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'TheJamsil5Bold';
+    animation: fadeIn 1.5s ease-in-out;
 }
+
+.car-data-dis {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
 
 .hidden {
     display: none;
 }
 
-.car-data-heading {
-    font-size: 3rem;
-    margin-bottom: 5rem;
-    animation: slideFromLeft 1s ease-in-out;
-    /* 왼쪽에서 오른쪽으로 나타나는 애니메이션 */
-}
 
 @keyframes slideFromLeft {
     from {
@@ -59,17 +68,13 @@
     margin-bottom: 5rem;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 5rem;
-}
+
 
 .search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 4rem;
 }
 
 input[type='text'] {

@@ -3,9 +3,9 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
-  }
+}
 
-  body {
+body {
     font-family: 'TheJamsil5Bold';
     height: 100vh;
     /* 화면 높이의 100%로 설정 */
@@ -15,7 +15,7 @@
     background-repeat: no-repeat;
     /* 이미지 반복을 중지 */
     color: white;
-  }
+}
 
 ul {
     list-style: none;
@@ -32,7 +32,6 @@ ul {
     justify-content: space-between;
     background-color: none;
     color: white;
-    
 }
 
 .my-bg-color {
@@ -147,7 +146,7 @@ ul {
     display: flex;
     width: 100%;
     margin-right: 10rem;
-    
+
 }
 
 .dropdown_category {
@@ -169,4 +168,3 @@ a:-webkit-any-link {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
-
