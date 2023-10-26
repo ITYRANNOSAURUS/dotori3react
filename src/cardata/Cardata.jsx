@@ -26,7 +26,7 @@ const Cardata = () => {
             </div>
             <div className={style['car-data-container']}>
                 <ReactPlayer
-                    url="https://www.youtube.com/watch?v=nABR88G_2cE"
+                    url="https://www.youtube.com/watch?v=m3J1TAF93pQ"
                     playing={true}
                     loop={true}
                     muted={true}
