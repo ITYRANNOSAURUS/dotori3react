@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import Cardata from './cardata/Cardata';
 import Header from './header/Header';
 import Loading from './loading/Loading';
+import './App.css';
 
 function App() {
   const [message, setMessage] = useState("");
@@ -17,7 +18,7 @@ function App() {
           setMessage(message);
           setIsLoading(false); // 2초 후에 로딩 완료로 설정
         });
-    }, 2000); // 2초 지연
+    }, 2500); // 2초 지연
   }, []);
 
   return (

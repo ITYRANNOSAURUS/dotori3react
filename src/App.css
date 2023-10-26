@@ -1,5 +1,21 @@
 .App {
-    background-color: #000000;  /* 검정색 */
-    min-height: 100vh;
-    color: white; /* 글자색을 흰색으로 변경 */
-  }
+  background-color: #000000;
+  /* 검정색 */
+  min-height: 100vh;
+  color: white;
+  /* 글자색을 흰색으로 변경 */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
