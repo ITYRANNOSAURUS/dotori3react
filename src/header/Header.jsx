@@ -35,17 +35,17 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item dropdown mr-3"
-                    onMouseEnter={() => setDropdownOpen5(true)}
-                    onMouseLeave={() => setDropdownOpen5(false)}>
+                    onMouseEnter={() => setDropdownOpen3(true)}
+                    onMouseLeave={() => setDropdownOpen3(false)}>
                     <a className="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button" aria-haspopup="true" aria-expanded="false"
                         style={{ color: 'rgb(255, 179, 0)' }}>정보마당</a>
-                    {dropdownOpen5 && (
+                    {dropdownOpen3 && (
                         <div className="dropdown-menu" aria-labelledby="infoDropdown">
                             <a className='dropdown-item' href='http://localhost/statistic/chargerStatus'>통계정보</a>
                             <div className="dropdown">
-                                <a className='dropdown-item' href='http://localhost/statistic/chargerExpense'>서비스안내</a>
+                                <a className='dropdown-item' href='http://localhost/statistic/ChargerExpense'>서비스안내</a>
                                 <div className="dropdown">
-                                    <a className='dropdown-item' href='http://localhost/charginglist'>충전소리스트</a>
+                                    <a className='dropdown-item' href='http://localhost/chargingslist'>충전소리스트</a>
                                 </div>
                             </div>
                         </div>
@@ -53,11 +53,11 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item dropdown mr-3"
-                    onMouseEnter={() => setDropdownOpen3(true)}
-                    onMouseLeave={() => setDropdownOpen3(false)}>
+                    onMouseEnter={() => setDropdownOpen4(true)}
+                    onMouseLeave={() => setDropdownOpen4(false)}>
                     <a className="nav-link dropdown-toggle active" href="#" id="postsDropdown" role="button" aria-haspopup="true" aria-expanded="false"
                         style={{ color: 'rgb(255, 179, 0)' }}>미디어</a>
-                    {dropdownOpen3 && (
+                    {dropdownOpen4 && (
                         <div className="dropdown-menu" aria-labelledby="infoDropdown">
                             <a className='dropdown-item' href='http://localhost/media/news?searchText=전기차'>전기차 뉴스</a>
                             <div className="dropdown">
@@ -74,11 +74,11 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item dropdown mr-3"
-                    onMouseEnter={() => setDropdownOpen4(true)}
-                    onMouseLeave={() => setDropdownOpen4(false)}>
+                    onMouseEnter={() => setDropdownOpen5(true)}
+                    onMouseLeave={() => setDropdownOpen5(false)}>
                     <a className="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button" aria-haspopup="true" aria-expanded="false"
                         style={{ color: 'rgb(255, 179, 0)' }}>멤버십</a>
-                    {dropdownOpen4 && (
+                    {dropdownOpen5 && (
                         <div className="dropdown-menu" aria-labelledby="infoDropdown">
                             <a className='dropdown-item' href='http://localhost/exchange'>코인교환</a>
                             <div className="dropdown">
