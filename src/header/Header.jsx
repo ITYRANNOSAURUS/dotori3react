@@ -5,6 +5,7 @@ const Header = () => {
     const [dropdownOpen2, setDropdownOpen2] = useState(false);
     const [dropdownOpen3, setDropdownOpen3] = useState(false);
     const [dropdownOpen4, setDropdownOpen4] = useState(false);
+    const [dropdownOpen5, setDropdownOpen5] = useState(false);
 
     return (
         <div className="h p-5 my-bg-color text-white">
@@ -30,6 +31,24 @@ const Header = () => {
                             </div>
                         </div>
 
+                    )}
+                </li>
+
+                <li className="nav-item dropdown mr-3"
+                    onMouseEnter={() => setDropdownOpen5(true)}
+                    onMouseLeave={() => setDropdownOpen5(false)}>
+                    <a className="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                        style={{ color: 'rgb(255, 179, 0)' }}>정보마당</a>
+                    {dropdownOpen5 && (
+                        <div className="dropdown-menu" aria-labelledby="infoDropdown">
+                            <a className='dropdown-item' href='http://localhost/statistic/chargerStatus'>통계정보</a>
+                            <div className="dropdown">
+                                <a className='dropdown-item' href='http://localhost/statistic/chargerExpense'>서비스안내</a>
+                                <div className="dropdown">
+                                    <a className='dropdown-item' href='http://localhost/charginglist'>충전소리스트</a>
+                                </div>
+                            </div>
+                        </div>
                     )}
                 </li>
 

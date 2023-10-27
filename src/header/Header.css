@@ -108,7 +108,7 @@ a.dropdown-item {
 .h {
     display: flex;
     padding: 48px;
-    width: 1200px;
+    width: 100%;
 }
 
 h2 {
