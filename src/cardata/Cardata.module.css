@@ -4,6 +4,18 @@ h1 {
     color: #f2c12e;
 }
 
+.selected-items-title {
+    text-align: center;
+    width: 94rem;
+    font-size: 1.7rem;
+    height: 4rem;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 
 .car-data-container {
     text-align: center;
@@ -112,7 +124,6 @@ strong {
 }
 
 .car-item {
-    color: rgb(170, 31, 6);
     font-family: 'TheJamsil5Bold';
     text-align: center;
 }

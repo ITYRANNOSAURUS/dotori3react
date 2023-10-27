@@ -5,9 +5,7 @@ import ReactPlayer from 'react-player';
 const Cardata = () => {
     const [carDatas, setCarDatas] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [clickedModels, setClickedModels] = useState(
-        JSON.parse(sessionStorage.getItem('clickedModels')) || []
-    );
+    const [selectedItems, setSelectedItems] = useState([]);
 
     useEffect(() => {
         fetch("/media/cardata")
@@ -15,19 +13,14 @@ const Cardata = () => {
             .then((data) => setCarDatas(data));
     }, []);
 
-    const saveCarModel = (model) => {
-        if (!clickedModels.includes(model)) {
-            const newClickedModels = [...clickedModels, model];
-            setClickedModels(newClickedModels);
-            sessionStorage.setItem('clickedModels', JSON.stringify(newClickedModels));
+    const toggleSelect = (item) => {
+        if (selectedItems.includes(item)) {
+            setSelectedItems(selectedItems.filter((selectedItem) => selectedItem !== item));
+        } else {
+            setSelectedItems([...selectedItems, item]);
         }
     }
 
-    const deleteCarModel = (model) => {
-        const newClickedModels = clickedModels.filter((clickedModel) => clickedModel !== model);
-        setClickedModels(newClickedModels);
-        sessionStorage.setItem('clickedModels', JSON.stringify(newClickedModels));
-    }
 
     return (
         <div className={style['react']}>
@@ -66,25 +59,23 @@ const Cardata = () => {
                 </div>
 
                 <div className={style['results-container']}>
-                    <h2>클릭한 자동차 모델</h2>
-                    {clickedModels.map((model, index) => (
+                    <h2 className={style['selected-items-title']}>검색 기록</h2>
+                    {selectedItems.map((item, index) => (
                         <div key={index}>
-                            <p>{model} <button onClick={() => deleteCarModel(model)}>x</button></p>
+                            <p>{item} <button onClick={() => toggleSelect(item)}>x</button></p>
                         </div>
                     ))}
-                    {
-                        carDatas.filter((val) => {
-                            if (searchTerm === "") {
-                                return val;
-                            } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
-                                return val;
-                            }
-                        }).map((car) => (
-                            <div key={car.id} className={style['car-item']}>
-                                <a href="#" onClick={(e) => { e.preventDefault(); saveCarModel(car.model); }}>{car.model}</a>
-                                <p className={style.Km}>{car.km} km</p>
-                            </div>
-                        ))
+                    {carDatas.filter((val) => {
+                        if (searchTerm === "") {
+                            return val;
+                        } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return val;
+                        }
+                    }).map((car) => (
+                        <div key={car.id} className={style['car-item']}>
+                            <a href="#" onClick={(e) => { e.preventDefault(); toggleSelect(`${car.model} - ${car.km} km`); }}>{car.model} - {car.km} km</a>
+                        </div>
+                    ))
                     }
                 </div>
             </div>
