@@ -12,7 +12,7 @@ const Header = () => {
             <h2 className="my-text-size">
                 <a href="http://localhost/home"><img className='title' src="/logo.png" alt="" /></a>
             </h2>
-            <ul className="u navbar-nav mx-auto">
+            <ul className="u navbar-nav">
                 <li className="nav-item dropdown mr-3">
                     <a className="nav-link dropdown-toggle active" href='http://localhost/map' id="infoDropdown" role="button" aria-haspopup="true" aria-expanded="false"
                         style={{ color: 'rgb(255, 179, 0)' }}>충전소 찾기</a>
