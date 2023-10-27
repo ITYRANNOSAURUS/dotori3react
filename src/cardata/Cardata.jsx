@@ -2,16 +2,32 @@ import { useState, useEffect } from 'react';
 import style from './Cardata.module.css'
 import ReactPlayer from 'react-player';
 
-
 const Cardata = () => {
     const [carDatas, setCarDatas] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const [clickedModels, setClickedModels] = useState(
+        JSON.parse(sessionStorage.getItem('clickedModels')) || []
+    );
 
     useEffect(() => {
         fetch("/media/cardata")
             .then((res) => res.json())
             .then((data) => setCarDatas(data));
     }, []);
+
+    const saveCarModel = (model) => {
+        if (!clickedModels.includes(model)) {
+            const newClickedModels = [...clickedModels, model];
+            setClickedModels(newClickedModels);
+            sessionStorage.setItem('clickedModels', JSON.stringify(newClickedModels));
+        }
+    }
+
+    const deleteCarModel = (model) => {
+        const newClickedModels = clickedModels.filter((clickedModel) => clickedModel !== model);
+        setClickedModels(newClickedModels);
+        sessionStorage.setItem('clickedModels', JSON.stringify(newClickedModels));
+    }
 
     return (
         <div className={style['react']}>
@@ -24,45 +40,53 @@ const Cardata = () => {
                     <p className={style['car-data-dis']}>전기차 주행거리 : 한 번 충전으로 주행할 수 있는 거리</p>
                 </div>
             </div>
-            <div className={style['car-data-container']}>
-                <ReactPlayer
-                    url="https://www.youtube.com/watch?v=m3J1TAF93pQ"
-                    playing={true}
-                    loop={true}
-                    muted={true}
-                    width="100%"
-                    height="100%"
-                    style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}
-                />
-                <p className={style['car-data-intro']}>주행거리 상위 250개 전기자동차 목록입니다.<br /><br />
-                    알고 싶은 차종을 검색해 보세요!</p>
-                <div className={style['search-bar']}>
-                    <input
-                        type="text"
-                        placeholder="차 종류 입력"
-                        onChange={(event) => {
-                            setSearchTerm(event.target.value);
-                        }}
+            <div className={style['container']}>
+                <div className={style['car-data-container']}>
+                    <ReactPlayer
+                        url="https://www.youtube.com/watch?v=m3J1TAF93pQ"
+                        playing={true}
+                        loop={true}
+                        muted={true}
+                        width="100%"
+                        height="100%"
+                        style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }}
                     />
-                    <button className={style['search-button']}>검색</button>
+                    <p className={style['car-data-intro']}>주행거리 상위 250개 전기자동차 목록입니다.<br /><br />
+                        알고 싶은 차종을 검색해 보세요!</p>
+                    <div className={style['search-bar']}>
+                        <input
+                            type="text"
+                            placeholder="차 종류 입력"
+                            onChange={(event) => {
+                                setSearchTerm(event.target.value);
+                            }}
+                        />
+                        <button className={style['search-button']}>검색</button>
+                    </div>
                 </div>
-            </div>
 
-            <div className={style['results-container']}>
-                {
-                    carDatas.filter((val) => {
-                        if (searchTerm === "") {
-                            return val;
-                        } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            return val;
-                        }
-                    }).map((car) => (
-                        <div key={car.id} className={style['car-item']}>
-                            <p>{car.model}</p>
-                            <p className={style.Km}>{car.km} km</p>
+                <div className={style['results-container']}>
+                    <h2>클릭한 자동차 모델</h2>
+                    {clickedModels.map((model, index) => (
+                        <div key={index}>
+                            <p>{model} <button onClick={() => deleteCarModel(model)}>x</button></p>
                         </div>
-                    ))
-                }
+                    ))}
+                    {
+                        carDatas.filter((val) => {
+                            if (searchTerm === "") {
+                                return val;
+                            } else if (val.model.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((car) => (
+                            <div key={car.id} className={style['car-item']}>
+                                <a href="#" onClick={(e) => { e.preventDefault(); saveCarModel(car.model); }}>{car.model}</a>
+                                <p className={style.Km}>{car.km} km</p>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div >
     );
